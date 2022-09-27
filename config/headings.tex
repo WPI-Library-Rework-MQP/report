@@ -1,0 +1,18 @@
+\titleformat{\chapter}[hang]
+    {\normalfont\huge\bfseries}
+    {\thechapter}{20pt}{\huge}
+\titlespacing*{\chapter}{0pt}{0pt}{40pt}
+
+\titleformat{\section}[hang]
+    {\normalfont\Large\bfseries}
+    {\thesection}{20pt}{\Large}
+\titlespacing*{\section}{0pt}{30pt}{20pt}
+
+\titleformat{\subsection}[hang]
+    {\normalfont\large\bfseries}
+    {\thesubsection}{20pt}{\large}
+\titlespacing*{\subsection}{0pt}{30pt}{20pt}
+
+\newcommand{\Chapter}[2]{\chapter{#1}\label{ch:#2}}
+\newcommand{\Section}[3]{\section{#1}\label{ch:#2:sec:#3}}
+\newcommand{\SubSection}[4]{\subsection{#1}\label{ch:#2:sec:#3:subsec:#4}}
