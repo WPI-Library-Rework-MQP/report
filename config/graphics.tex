@@ -1,3 +1,45 @@
 \graphicspath{{./assets/img}}
 
+\definecolor{Primary}{RGB}{172,43,55}
+\definecolor{Accent}{RGB}{0,0,0}
+\definecolor{Gray}{RGB}{169,176,183}
+\definecolor{Body}{RGB}{52,56,59}
+
 \newcommand{\HRule}[1]{\rule{\linewidth}{#1}}
+
+% \newcommand{\ColorBox}[3]{\tikz{\path[draw=#1,fill=#1] (0,0) rectangle (#2,#3);}}
+\newcommand{\ColorBox}[3]{\textcolor{#1}{\rule{#2}{#3}}}
+
+% Tables
+%--------------------------------------------------
+
+\UseTblrLibrary{varwidth}
+\SetTblrInner[tblr]{measure=vbox}
+
+% Fonts
+%--------------------------------------------------
+
+\newfontfamily{\MinionPro}[
+    Path           = {./assets/fonts/minion_pro/},
+    Extension      = .otf,
+    UprightFont    = *-Regular,
+    ItalicFont     = *-It,
+    FontFace       = {md}{n}{*-Medium},
+    FontFace       = {md}{it}{*-MediumIt},
+    FontFace       = {sb}{n}{*-Semibold},
+    FontFace       = {sb}{it}{*-SemiboldIt},
+    BoldFont       = *-Bold,
+    BoldItalicFont = *-BoldIt
+]{MinionPro}
+
+\newfontfamily{\MyriadPro}[
+    Path           = {./assets/fonts/myriad_pro/},
+    Extension      = .otf,
+    UprightFont    = *-REGULAR,
+    FontFace       = {sb}{n}{*-SEMIBOLD},
+    FontFace       = {sb}{it}{*-SEMIBOLDIT},
+    BoldFont       = *-BOLD,
+    BoldItalicFont = *-BOLDIT
+]{MyriadPro}
+
+\newcommand{\FontVariant}[1]{\fontseries{#1}\selectfont}

@@ -7,7 +7,7 @@
 %
 
 \usepackage[T1]{fontenc}
-\usepackage[utf8]{inputenc}
+% \usepackage[utf8]{inputenc}
 \usepackage[english]{babel}
 
 % Layout
@@ -20,6 +20,10 @@
 \usepackage{enumitem}
 \usepackage{fancyhdr}
 \usepackage{titlesec}
+\usepackage{csquotes}
+% \usepackage{tabularx}
+\usepackage{tabularray}
+\usepackage{float}
 
 % Math
 %
@@ -34,6 +38,14 @@
 \usepackage{xcolor}
 \usepackage{graphicx}
 \usepackage{hyperref}
+\usepackage{textcomp}
+\usepackage{tikz}
+\usepackage{fontspec}
+
+% Utilities
+%
+
+\usepackage{suffix}
 
 % Debugging
 %
@@ -72,25 +84,13 @@
 
     \tableofcontents
 
-    \chapter*{Abstract}
-    \label{ch:abstract}
-    \markboth{Abstract}{}
-    \addcontentsline{toc}{chapter}{\nameref{ch:abstract}}
-
+    \Chapter*{Abstract}{abstract}
         ABSTRACT
 
-    \chapter*{Executive Summary}
-    \label{ch:executive_summary}
-    \markboth{Executive Summary}{}
-    \addcontentsline{toc}{chapter}{\nameref{ch:executive_summary}}
-
+    \Chapter*{Executive Summary}{executive_summary}
         EXECUTIVE SUMMARY
-
-    \chapter*{Authorship}
-    \label{ch:authorship}
-    \markboth{Authorship}{}
-    \addcontentsline{toc}{chapter}{\nameref{ch:authorship}}
-
+    
+    \Chapter*{Authorship}{authorship}
         AUTHORSHIP
 
     \Chapter{Introduction}{introduction}

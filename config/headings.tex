@@ -13,6 +13,14 @@
     {\thesubsection}{20pt}{\large}
 \titlespacing*{\subsection}{0pt}{30pt}{20pt}
 
+\titleformat{\subsubsection}[hang]
+    {\normalfont\normalsize\bfseries}
+    {\thesubsubsection}{20pt}{\normalsize}
+\titlespacing*{\subsubsection}{0pt}{15pt}{10pt}
+
 \newcommand{\Chapter}[2]{\chapter{#1}\label{ch:#2}}
 \newcommand{\Section}[3]{\section{#1}\label{ch:#2:sec:#3}}
 \newcommand{\SubSection}[4]{\subsection{#1}\label{ch:#2:sec:#3:subsec:#4}}
+\newcommand{\SubSubSection}[5]{\subsubsection{#1}\label{ch:#2:sec:#3:subsec:#4:subsubsec:#5}}
+
+\WithSuffix\newcommand\Chapter*[2]{\chapter*{#1}\label{ch:#2}\markboth{#1}{}\addcontentsline{toc}{chapter}{\nameref{ch:#2}}}
