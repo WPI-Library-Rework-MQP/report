@@ -1,0 +1,47 @@
+\newcommand{\UseCase}[8]{%
+    \begin{Figure}{Use Case}{H}
+        \centering
+        \begin{tblr}{
+            width   = 0.8\textwidth,
+            colspec = {Q[l, h]|X[l, h]}
+        }
+            \hline
+            \SetCell[c=2]{halign=c}\textbf{#1} \\
+            \hline
+            \SetCell[c=2]{0.8\textwidth,halign=l}#3 \\
+            \hline
+            \textsb{Actors}         & #4 \\
+            \textsb{Flow of Events} & #5 \\
+            \textsb{Outcome}        & #6 \\
+            \textsb{Triggers}       & #7 \\
+            \textsb{Preconditions}  & \ifstrempty{#8}{\emph{None}}{#8} \\
+            \hline
+        \end{tblr}
+        \caption{#1}
+        \label{uc:#2}
+    \end{Figure}
+}
+
+\newcommand{\UseCaseNew}[8]{%
+    \begin{Figure}{Use Case}{H}
+        \centering
+        \begin{tblr}{
+            width   = 0.8\textwidth,
+            colspec = {Q[l, h]|X[l, h]}
+        }
+            \hline
+            \SetCell[c=2]{halign=c}\textbf{#1} \\
+            \hline
+            \SetCell[c=2]{0.8\textwidth,halign=l}#3 \\
+            \hline
+            \textsb{Actors}         & \ifstrempty{#4}{\emph{Implicit}}{#4} \\
+            \textsb{Preconditions}  & \ifstrempty{#5}{\emph{None}}{#5} \\
+            \textsb{Triggers}       & \ifstrempty{#6}{\emph{Implicit}}{#6} \\
+            \textsb{Flow of Events} & #7 \\
+            \textsb{Outcome}        & #8 \\
+            \hline
+        \end{tblr}
+        \caption{#1}
+        \label{uc:#2}
+    \end{Figure}
+}

@@ -1,0 +1,480 @@
+Use cases that describe functionality of chatrooms.
+
+\SubSubSection{General}{methodology}{use_cases}{chat_platform}{general}
+
+    \UseCaseNew{User Archive Chatroom}{user_archive_chatroom}{%
+        Describes the process when a user archives a chatroom.
+    }{%
+        \FakeItem Initiating User \par
+        \FakeItem Other Participating Users
+    }{%
+        \FakeItem The Initiating User has the authority to archive a chatroom.
+    }{%
+        \FakeItem The Initiating User requests to archive a chatroom.
+    }{%
+        \FakeNumberedItem{1} The Initiating User archives the chatroom. \par
+        \FakeNumberedItem{2} The display is updated for all actors. \par
+        \FakeNumberedItem{3} A sound is played for all actors. \par
+        \FakeNumberedItem{4} A notification is sent to all actors.
+    }{%
+        The chatroom is archived and no actors can send messages.
+    }
+
+    \UseCaseNew{Automatically Archive Chatroom}{automatically_archive_chatroom}{%
+        Describes the process when a chatroom is automatically archived due to a period of inactivity.
+    }{}{%
+        \FakeItem There is a period of inactivity in the chatroom.
+    }{%
+        \FakeItem A period of inactivity in the chatroom.
+    }{%
+        \FakeNumberedItem{1} The chatroom is archived. \par
+        \FakeNumberedItem{2} The display is updated for all participating users. \par
+        \FakeNumberedItem{3} A sound is played for all participating users. \par
+        \FakeNumberedItem{4} A notification is sent to all participating users.
+    }{%
+        The chatroom is archived and no users can send messages.
+    }
+
+    \UseCaseNew{Restore Chatroom}{restore_chatroom}{%
+        Describes the process when a user restores an archived chatroom.
+    }{%
+        \FakeItem Initiating User \par
+        \FakeItem Other Participating Users
+    }{%
+        \FakeItem The Initiating User has the authority to restore a chatroom.
+    }{%
+        \FakeItem The Initiating User requests to restore an archived chatroom.
+    }{%
+        \FakeNumberedItem{1} The Initiating User restores the archived chatroom. \par
+        \FakeNumberedItem{2} Use case \hyperref[uc:join_chatroom]{Join Chatroom}. \par
+        \FakeNumberedItem{3} A notification is sent to all actors.
+    }{%
+        The chatroom is restored, users can send messages, and all users are aware of this.
+    }
+
+\SubSubSection{Participants}{methodology}{use_cases}{chat_platform}{participants}
+
+    \UseCaseNew{Join Chatroom}{join_chatroom}{%
+        Describes the process when a user joins a chatroom.
+    }{%
+        \FakeItem Initiating User \par
+        \FakeItem Other Participating Users
+    }{%
+        \FakeItem The Initiating User has the authority to join a chatroom.
+    }{%
+        \FakeItem The Initiating User requests to join a chatroom.
+    }{%
+        \FakeNumberedItem{1} The Initiating User joins the chatroom. \par
+        \FakeNumberedItem{2} The join action is timestamped. \par
+        \FakeNumberedItem{3} The displays is updated for Other Participating Users. \par
+        \FakeNumberedItem{4} A sound is played for all actors.
+    }{%
+        The Initiating User has joined the chatroom and all actors are aware of this.
+    }
+
+    \UseCaseNew{Leave Chatroom}{leave_chatroom}{%
+        Describes the process when a user leaves a chatroom.
+    }{%
+        \FakeItem Initiating User \par
+        \FakeItem Other Participating Users
+    }{}{%
+        \FakeItem The Initiating User requests to leave a chatroom.
+    }{%
+        \FakeNumberedItem{1} The Initiating User leaves the chatroom. \par
+        \FakeNumberedItem{2} The leave action is timestamped. \par
+        \FakeNumberedItem{3} The display is updated for all actors. \par
+        \FakeNumberedItem{4} A sound is played for all actors.
+    }{%
+        The Initiating User has left the chatroom and all actors are aware of this.
+    }
+
+    \UseCaseNew{Invite User}{invite_user}{%
+        Describes the process when a user invites another user to a chatroom.
+    }{%
+        \FakeItem Initiating User \par
+        \FakeItem Invited User \par
+        \FakeItem Other Participating Users
+    }{%
+        \FakeItem The Initiating User has the authority to invite another user to a chatroom.
+    }{%
+        \FakeItem The Initiating User requests to invite the Invited User to a chatroom.
+    }{%
+        \FakeNumberedItem{1} The Initiating User invites the Invited User to the chatroom. \par
+        \FakeNumberedItem{2} The invite action is timestamped. \par
+        \FakeNumberedItem{3} The Invited User is notified. They can now perform use case \hyperref[uc:join_chatroom]{Join Chatroom}. \par
+        \FakeNumberedItem{4} The display is updated for the Initiating User and Other Participating Users.
+    }{%
+        The Invited User is invited to the chatroom and all actors are aware of this.
+    }
+
+    \UseCaseNew{Remove User}{remove_user}{%
+        Describes the process when a user removes a user from a chatroom.
+    }{%
+        \FakeItem Initiating User \par
+        \FakeItem Removed User - Can be the Initiating User. \par
+        \FakeItem Other Participating Users
+    }{%
+        \FakeItem The Initiating User has the authority to remove a user from a chatroom.
+    }{%
+        \FakeItem The Initiating User requests to remove the Removed User from a chatroom.
+    }{%
+        \FakeNumberedItem{1} The Initiating User removes the Removed User from the chatroom. \par
+        \FakeNumberedItem{2} The remove action is timestamped. \par
+        \FakeNumberedItem{3} The display is updated for all actors.
+    }{%
+        The Removed User is removed from the chatroom and all actors are aware of this.
+    }
+
+\SubSubSection{Messages}{methodology}{use_cases}{chat_platform}{messages}
+    
+    \UseCaseNew{Send Message}{send_message}{%
+        Describes the process when a user sends a message.
+    }{%
+        \FakeItem Initiating User \par
+        \FakeItem Other Participating Users
+    }{%
+        \FakeItem The Initiating User is in a chatroom. \par
+        \FakeItem The Initiating User has the authority to send a message. \par
+        \FakeItem The Initiating User's message is not blank.
+    }{%
+        \FakeItem The Initiating User requests to send a message.
+    }{%
+        \FakeNumberedItem{1} The Initiating User sends the message. \par
+        \FakeNumberedItem{2} The message is timestamped. \par
+        \FakeNumberedItem{3} The Initiating User's message box is cleared. \par
+        \FakeNumberedItem{4} The message is appended to the end of the transcript for all actors.
+    }{%
+        The Initiating User's message is appended to the end of the transcript.
+    }
+    
+    \UseCaseNew{Receive Message}{receive_message}{%
+        Describes the process when a user receives a message.
+    }{%
+        \FakeItem User
+    }{%
+        \FakeItem The User is in a chatroom.
+    }{}{%
+        \FakeNumberedItem{1} The chatroom transcript is updated on the display. \par
+        \FakeNumberedItem{2} A sound is played.
+    }{%
+        The chatroom transcript has been updated.
+    }
+
+    \UseCaseNew{Read Message}{read_message}{%
+        Describes the process when a user reads a message.
+    }{%
+        \FakeItem Initiating User \par
+        \FakeItem Other Participating Users
+    }{%
+        \FakeItem The Initiating User is in a chatroom.
+    }{%
+        \FakeItem The Initiating User reads a message.
+    }{%
+        \FakeNumberedItem{1} The Initiating User reads the message. \par
+        \FakeNumberedItem{2} The read action is timestamped. \par
+        \FakeNumberedItem{3} The transcript is updated for all actors to reflect that the Initiating User has read the message.
+    }{%
+        The chatroom transcript has been updated.
+    }
+
+
+
+
+% \SubSubSection{Client}{methodology}{use_cases}{chat_platform}{client}
+
+%     \UseCase{Send Message}{send_message}{%
+%         Describes the process when a Client sends a message to the Middle-Tier.
+%     }{%
+%         \FakeItem Client \par
+%         \FakeItem Middle-Tier
+%     }{%
+%         \FakeNumberedItem{1} Client sends message to Middle-Tier. \par
+%         \FakeNumberedItem{2} Client receives response from Middle-Tier. \par
+%         \FakeNumberedItem{3} Client updates display.
+%     }{%
+%         Message is sent to Middle-Tier.
+%     }{%
+%         \FakeItem Client requests to send a message.
+%     }{%
+%         \FakeItem Client is in a chatroom. \par
+%         \FakeItem Client's message body is not empty.
+%     }
+%     %-------------------------------------------------------------------------------------   
+%     \UseCase{Fetch Messages}{fetch_messages}{%
+%         Describes a process when a Client requests messages from the Middle-Tier.
+%     }{%
+%         \FakeItem Client \par
+%         \FakeItem Middle-Tier
+%     }{%
+%         \FakeNumberedItem{1} Client requests messages from Middle-Tier. \par
+%         \FakeNumberedItem{2} Client receives response from Middle-Tier. \par
+%         \FakeNumberedItem{3} Client updates display.
+%     }{%
+%         All messages are displayed on the Client.
+%     }{%
+%         \FakeItem Client is in a chatroom. \par
+%         \FakeItem 10 seconds have elapsed since previous request.
+
+%     }{}
+%     %-------------------------------------------------------------------------------------   
+%     \UseCase{Fetch Read Receipts}{fetch_read_receipts}{%
+%         Describes a process when a Client requests  from the Middle-Tier.
+%     }{%
+%         \FakeItem Client \par
+%         \FakeItem Middle-Tier
+%     }{%
+%         \FakeNumberedItem{1} Client requests messages from Middle-Tier. \par
+%         \FakeNumberedItem{2} Client receives response from Middle-Tier. \par
+%         \FakeNumberedItem{3} Client updates display.
+%     }{%
+%         All messages are displayed on the Client.
+%     }{%
+%         \FakeItem Client is in a chatroom. \par
+%         \FakeItem 10 seconds have elapsed since previous request.
+%     }{}
+%     %-------------------------------------------------------------------------------------   
+%     \UseCase{New Chatroom}{new_chatroom}{%
+%         Describes the process when a Client requests to create a new chatroom.
+%     }{%
+%         \FakeItem Client \par
+%         \FakeItem Middle-Tier
+%     }{%
+%         \FakeNumberedItem{1} Client sends request to create a new chatroom to Middle-Tier. \par
+%         \FakeNumberedItem{2} Client receives response from Middle-Tier.
+%     }{%
+%         \FakeItem Client is aware of the new chatroom.
+%     }{%
+%         \FakeItem Client requests to create a new chatroom.
+%     }{}
+%     %-------------------------------------------------------------------------------------   
+%     \UseCase{Join Chatroom}{join_chatroom}{%
+%         Describes the process when a Client requests to join an existing chatroom.
+%     }{%
+%         \FakeItem Client \par
+%         \FakeItem Middle-Tier
+%     }{%
+%         \FakeNumberedItem{1} Client sends request to join an existing chatroom to Middle-Tier. \par
+%         \FakeNumberedItem{2} Client receives response from Middle-Tier. \par
+%         \FakeNumberedItem{3} Client updates display.
+%     }{%
+%         The chatroom is displayed on the Client.
+%     }{%
+%         \FakeItem Client requests to join an existing chatroom.
+%     }{}
+%     %-------------------------------------------------------------------------------------   
+%     \UseCase{Invite Participant}{invite_participant}{%
+%         Describes the process when a Client invites a participant.
+%     }{%
+%         \FakeItem Client \par
+%         \FakeItem Middle-Tier
+%     }{%
+%         \FakeNumberedItem{1} Client sends request to add a participant to Middle-Tier. \par
+%         \FakeNumberedItem{2} Client receives response from Middle-Tier. \par
+%         \FakeNumberedItem{3} Client updates display.
+%     }{%
+%         All participants are displayed on the Client.
+%     }{%
+%         \FakeItem Client requests to add a participant.
+%     }{%
+%         \FakeItem Client is in a chatroom. \par
+%         \FakeItem Client is librarian.
+%     }
+%     %-------------------------------------------------------------------------------------   
+%     \UseCase{Leave Chatroom}{leave_chatroom}{%
+%         Describes the process when a Client requests to leave a chatroom.
+%     }{%
+%         \FakeItem Client \par
+%         \FakeItem Middle-Tier
+%     }{%
+%         \FakeNumberedItem{1} Client requests confirmation. \par
+%         \FakeNumberedItem{2} Client sends request to leave a chatroom to Middle-Tier. \par
+%         \FakeNumberedItem{3} Client receives response from Middle-Tier. \par
+%         \FakeNumberedItem{4} Client updates display.
+%     }{%
+%         The chatroom is removed from the display on the Client.
+%     }{%
+%         \FakeItem Client requests to leave a chatroom.
+%     }{%
+%         \FakeItem Client is in a chatroom.
+%     }
+
+% \SubSubSection{Middle-Tier}{methodology}{use_cases}{chat_platform}{middle-tier}
+
+%     \UseCase{Receive Message}{receive_message}{%
+%         Describes the process when the Middle-Tier receives a message request.
+%     }{%
+%         \FakeItem Middle-Tier
+%     }{%
+%         \FakeNumberedItem{1} Middle-Tier sanitizes the message.
+%                              If the message is a file, Middle-Tier performs security checks. \par
+%         \FakeNumberedItem{2} Middle-Tier checks for vulgar content in the message. \par
+%         \FakeNumberedItem{3} If the message passed all filters, Middle-Tier stores the message. \par
+%         \FakeNumberedItem{4} Middle-Tier sends a response.
+%     }{%
+%         The message is stored.
+%     }{%
+%         \FakeItem Middle-Tier receives a message request.
+%     }{%
+%         \FakeItem Request is authentic and requester has the proper authority.
+%     }
+%     %-------------------------------------------------------------------------------------   
+%     \UseCase{Provide Messages}{provide_messages}{%
+%         Describes the process when the Middle-Tier receives a request for messages.
+%     }{%
+%         \FakeItem Middle-Tier
+%     }{%
+%         \FakeNumberedItem{1} Middle-Tier queries messages. \par
+%         \FakeNumberedItem{2} Middle-Tier sends a response.
+%     }{%
+%         The messages are provided.
+%     }{%
+%         \FakeItem Middle-Tier receives a request for messages.
+%     }{%
+%         \FakeItem Request is authentic and requester has the proper authority.
+%     }
+%     %-------------------------------------------------------------------------------------  
+%     \UseCase{Provide Read Receipts}{provide_read_receipts}{%
+%         Describes the process when the Middle-Tier gets a request to provide read receipts.
+%     }{%
+%         \FakeItem Middle-Tier
+%     }{%
+%         \FakeNumberedItem{1} Middle-Tier queries read receipts. \par
+%         \FakeNumberedItem{2} Middle-Tier sends a response.
+%     }{%
+%         The read receipts are provided.
+%     }{%
+%         \FakeItem Middle-Tier receives a request to provide read receipts.
+%     }{%
+%         \FakeItem Request is authentic and requester has the proper authority. \par
+%         \FakeItem An unread message was received by the user.
+%     }
+%     %-------------------------------------------------------------------------------------
+%     \UseCase{Provide Typing Statuses}{provide_typing_statuses}{%
+%         Describes the process when the Middle-Tier gets a request to provide typing statuses.
+%     }{%
+%         \FakeItem Middle-Tier
+%     }{%
+%         \FakeNumberedItem{1} Middle-Tier receives a request to update typing statuses. \par
+%         \FakeNumberedItem{2} Middle-Tier sends a response.
+%     }{%
+%         The typing statuses are updated.
+%     }{%
+%         \FakeItem Middle-Tier receives a request to provide typing statuses.
+%     }{%
+%         \FakeItem Request is authentic and requester has the proper authority. \par
+%         \FakeItem User is typing in the chatroom.
+%     }
+%     %------------------------------------------------------------------------------------- 
+%     \UseCase{Create Chatroom}{create_chatroom}{%
+%         Describes the process when the Middle-Tier receives a request to create a new chatroom.
+%     }{%
+%         \FakeItem Middle-Tier
+%     }{%
+%         \FakeNumberedItem{1} Middle-Tier creates the chatroom. \par
+%         \FakeNumberedItem{2} Middle-Tier sends a response.
+%     }{%
+%         The new chatroom is created.
+%     }{%
+%         \FakeItem Middle-Tier receives a request to create a new chatroom.
+%     }{%
+%         \FakeItem Request is authentic and requester has the proper authority.
+%     }
+%     %-------------------------------------------------------------------------------------
+%     \UseCase{Add User To Chatroom}{add_user_to_chatroom}{%
+%         Describes the process when the Middle-tier receives a request to add a user to a chatroom.
+%     }{%
+%         \FakeItem Middle-Tier
+%     }{%
+%         \FakeNumberedItem{1} Middle-Tier adds the user to the chatroom. \par
+%         \FakeNumberedItem{2} Middle-Tier sends a response.
+%     }{%
+%         The user is added to the chatroom.
+%     }{%
+%         \FakeItem Middle-Tier receives a request to add a user to a chatroom.
+%     }{%
+%         \FakeItem Request is authentic and requester has the proper authority.
+%         \FakeItem User is not already in the chatroom.
+%     }
+%     %-------------------------------------------------------------------------------------
+%     \UseCase{Invite User To Chatroom}{invite_user_to_chatroom}{%
+%         Describes the process when the Middle-tier receives a request to notify and invite a user to join a chatroom.
+%     }{%
+%         \FakeItem Middle-Tier
+%     }{%
+%         \FakeNumberedItem{1} Middle-Tier sends a notification to the invitee. \par
+%         \FakeNumberedItem{2} Middle-Tier sends a response.
+%     }{%
+%         The user is notified and invited to join the chatroom.
+%     }{%
+%         \FakeItem Middle-Tier receives the request to notify and invite the user to the chatroom.
+%     }{%
+%         \FakeItem Request is authentic and requester has the proper authority.
+%         \FakeItem User is not already in the chatroom.
+%     }
+%     %-------------------------------------------------------------------------------------
+%     \UseCase{Remove User From Chatroom}{remove_user_from_chatroom}{%
+%         Describes the process when the Middle-tier receives a request to remove a user from a chatroom.
+%     }{%
+%         \FakeItem Middle-Tier
+%     }{%
+%         \FakeNumberedItem{1} Middle-Tier removes the user from the chatroom. \par
+%         \FakeNumberedItem{2} Middle-Tier sends a response.
+%     }{%
+%         The user is no longer in the chatroom.
+%     }{%
+%         \FakeItem Middle-Tier receives a request to remove a user from a chatroom.
+%     }{%
+%         \FakeItem Request is authentic and requester has the proper authority. \par
+%         \FakeItem User is already in the chatroom.
+%     }
+%     %-------------------------------------------------------------------------------------  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+% Status (Available, Away, Offline)
+% Admin Kicking and signing out of others
+% Blocking users from chatting options
+% IP Tracking
+% Data analytics
+% Link to Outlook / Calendar
+% Transcripts of chat after conclusion
+% Speech to text
+% Chat to email (Creating a case)
+% Estimated wait time (User)
+% Elapsed wait time (Admin)
+% AFK timeout after 15 minutes
+% AFK warning notification after X minutes
+% Rejoinable chat is one party leaves. If everyone leaves a chat, the chat will close.
+% Admin specified content filter (specific string. i.e. "F U C K")
+
+% \UseCase{}{}{%
+%     
+% }{%
+%     \FakeItem 
+%     \FakeItem 
+% }{%
+%     \FakeNumberedItem{1}  \par
+%     \FakeNumberedItem{2}  \par
+%     \FakeNumberedItem{3}  \par
+%     \FakeNumberedItem{4}  \par
+%     \FakeNumberedItem{5}  \par
+%     \FakeNumberedItem{6} 
+% }{%
+    
+% }{%
+%     \FakeItem 
+% }{%
+%     \FakeItem 
+% }

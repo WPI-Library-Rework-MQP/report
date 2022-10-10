@@ -17,47 +17,55 @@
     letterpaper,
     margin = 1in
 ]{geometry}
-\usepackage{enumitem}
 \usepackage{fancyhdr}
 \usepackage{titlesec}
 \usepackage{csquotes}
 % \usepackage{tabularx}
 \usepackage{tabularray}
 \usepackage{float}
+\usepackage{enumitem}
 
 % Math
 %
 
 \usepackage{amssymb}
 \usepackage{amsfonts}
+\usepackage{mathtools}
 
 % Graphics
 %
 
-\usepackage{newtxtext, newtxmath} % Times New Roman.
+% \usepackage{newtxtext, newtxmath} % Times New Roman.
+% \usepackage{lmodern}
+\usepackage{fontspec}
 \usepackage{xcolor}
 \usepackage{graphicx}
 \usepackage{hyperref}
+\usepackage{caption}
 \usepackage{textcomp}
 \usepackage{tikz}
-\usepackage{fontspec}
 
 % Utilities
 %
 
 \usepackage{suffix}
+\usepackage{etoolbox}
 
 % Debugging
 %
 
 % \usepackage{showframe}
+% \usepackage{layout}
+% \usepackage{fonttable}
 
 % Includes
 %--------------------------------------------------
 
+\input{config/layout.tex}
 \input{config/graphics.tex}
 \input{config/header_footer.tex}
 \input{config/headings.tex}
+\input{config/use_case.tex}
 
 % Document
 %--------------------------------------------------

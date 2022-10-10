@@ -1,0 +1,72 @@
+This section offers use cases that start with the Client on the "Question Specification" page.
+
+
+%--------------------------------------------------------------------------------------
+\UseCaseNew{Choose Remain Anonymous}{choose_remain_anonymous}{%
+     Describes the process when a User chooses whether or not to remain anonymous while chatting with a librarian.
+}{%
+    \FakeItem User
+}{%
+    \FakeItem The User is authenticated and authorized. \par
+    \FakeItem The User is on the Question Specification page.
+}{%
+    \FakeItem The User is requesting to remain anonymous in the proceeding chatroom.
+}{%
+    \FakeNumberedItem{1} The User navigates to the Remain Anonymous checkbox. \par
+    \FakeNumberedItem{2} The User checks the Remain Anonymous checkbox. \par
+    \FakeNumberedItem{3} The User's chatting preference is set to anonymous.
+}{%
+    The User's name is displayed as anonymous while chatting.
+}
+%-------------------------------------------------------------------------------------
+\UseCaseNew{Choose Question Category/Subcategory}{choose_question_category_and_subcategory}{%
+     Describes the process when a User chooses the appropriate category that best fits their question.
+}{%
+    \FakeItem User
+}{%
+    \FakeItem The User is authenticated and authorized. \par
+    \FakeItem The User is on the Question Specification page.
+}{%
+    \FakeItem The User is requesting a specific question category for the chatroom.
+}{%
+    \FakeNumberedItem{1} The User navigates to the Question Categories dropdown menu. \par
+    \FakeNumberedItem{2} The User selects the appropriate category. \par
+    \FakeNumberedItem{3} The User responds to the appropriate category specifiers.
+}{%
+    The User's question category is appropriately set for chat sorting.
+}
+%-------------------------------------------------------------------------------------
+\UseCaseNew{Write Brief Description}{write_brief_description}{%
+     Describes the process when a User writes a brief description of their question.
+}{%
+    \FakeItem User
+}{%
+    \FakeItem The User is authenticated and authorized. \par
+    \FakeItem The User is on the Question Specification page.
+}{%
+    \FakeItem The User provides a brief description.
+}{%
+    \FakeNumberedItem{1} The User navigates to the Brief Description entry field. \par
+    \FakeNumberedItem{2} The User inputs a response.
+}{%
+    \FakeItem The User's brief description is displayed as the first chat in the chatroom. \par
+    \FakeItem The User's brief description is displayed in the chat pool for the admins.
+}
+%-------------------------------------------------------------------------------------
+\UseCaseNew{Create Chatroom}{create_chatroom}{%
+        Describes the process when a user create a new chatroom.
+    }{%
+        \FakeItem User
+    }{%
+        \FakeItem The User has the authority to create a chatroom. \par
+        \FakeItem The User has provided the proper information for \hyperref[uc:remain_anonymous]{remaining anonymous}, \hyperref[uc:choose_question_category_and_subcategory]{selecting an appropriate question category and subcategory}, as well as providing a \hyperref[uc:write_brief_description]{brief description}.
+    }{%
+        \FakeItem The User requests to create a chatroom.
+    }{%
+        \FakeNumberedItem{1} The User creates the chatroom. \par
+        \FakeNumberedItem{2} The librarians are invited to the chatroom. \par
+        \FakeNumberedItem{3} Use case \hyperref[uc:join_chatroom]{Join Chatroom}.
+    }{%
+        The chatroom is displayed for the User.
+    }
+%-------------------------------------------------------------------------------------
