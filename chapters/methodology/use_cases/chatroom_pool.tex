@@ -1,0 +1,49 @@
+Use cases that describe functionality of the chatroom pool seen on the administrative side.
+
+%--------------------------------------------------------------------------------------
+\UseCaseNew{Receive Chatroom}{receive_chatroom}{%
+     Describes the process when a User receives a chatroom.
+}{%
+    \FakeItem User
+}{%
+    \FakeItem The User has the property authority.
+}{%
+    \FakeItem \textit{Implicit}
+}{%
+    \FakeNumberedItem{1} The chatroom pool page is updated on the display. \par
+    \FakeNumberedItem{2} A notification is sent to the User at 0, 60, 90, 120, etc. seconds.
+}{%
+    The chatroom pool page has been updated.
+}
+%--------------------------------------------------------------------------------------
+\UseCaseNew{Set User Activity Status}{set_user_status}{%
+     Describes the process when a User sets their activity status
+}{%
+    \FakeItem User
+}{%
+    \FakeItem The User has the proper authority.
+}{%
+    \FakeItem The User requests to change their activity status.
+}{%
+    \FakeNumberedItem{1} The User requests to change their activity status. \par
+    \FakeNumberedItem{2} The User's activity status is changed and the display is updated.
+}{%
+    The User's activity status is updated accordingly.
+}
+%-------------------------------------------------------------------------------------
+\UseCaseNew{Set Away Status}{set_away_status}{%
+     Describes the process when a User has their status set to Away.
+}{%
+    \FakeItem User
+}{%
+    \FakeItem The User has the proper authority. \par
+    \FakeItem The User has had no activity in the application for 10 minutes.
+}{%
+    \FakeItem The User has exceeded 10 minutes of inactivity.
+}{%
+    \FakeNumberedItem{1} The User has been inactive for 10 minutes. \par
+    \FakeNumberedItem{2} The User's activity status is set to Away and the display is updated.
+}{%
+    The User's activity status is set to Away.
+}
+%-------------------------------------------------------------------------------------
