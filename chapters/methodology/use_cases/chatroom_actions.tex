@@ -13,9 +13,10 @@ Use cases that describe functionality of chatrooms.
         \FakeItem The Initiating User requests to archive a chatroom.
     }{%
         \FakeNumberedItem{1} The Initiating User archives the chatroom. \par
-        \FakeNumberedItem{2} The display is updated for all actors. \par
-        \FakeNumberedItem{3} A sound is played for all actors. \par
-        \FakeNumberedItem{4} A notification is sent to all actors.
+        \FakeNumberedItem{2} The archive action is timestamped. \par
+        \FakeNumberedItem{3} The display is updated for all actors. \par
+        \FakeNumberedItem{4} A sound is played for all actors. \par
+        \FakeNumberedItem{5} A notification is sent to all actors.
     }{%
         The chatroom is archived and no actors can send messages.
     }
@@ -28,9 +29,10 @@ Use cases that describe functionality of chatrooms.
         \FakeItem A period of inactivity in the chatroom.
     }{%
         \FakeNumberedItem{1} The chatroom is archived. \par
-        \FakeNumberedItem{2} The display is updated for all participating users. \par
-        \FakeNumberedItem{3} A sound is played for all participating users. \par
-        \FakeNumberedItem{4} A notification is sent to all participating users.
+        \FakeNumberedItem{2} The archive action is timestamped. \par
+        \FakeNumberedItem{3} The display is updated for all participating users. \par
+        \FakeNumberedItem{4} A sound is played for all participating users. \par
+        \FakeNumberedItem{5} A notification is sent to all participating users.
     }{%
         The chatroom is archived and no users can send messages.
     }
@@ -77,7 +79,7 @@ Use cases that describe functionality of chatrooms.
     }{%
         \FakeItem Initiating User \par
         \FakeItem Other Participating Users
-    }{}{%
+    }{\textit{Implicit}}{%
         \FakeItem The Initiating User requests to leave a chatroom.
     }{%
         \FakeNumberedItem{1} The Initiating User leaves the chatroom. \par

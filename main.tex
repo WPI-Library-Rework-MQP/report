@@ -5,14 +5,14 @@
 
 % General
 %
-
+\usepackage[none]{hyphenat}
 \usepackage[T1]{fontenc}
 % \usepackage[utf8]{inputenc}
 \usepackage[english]{babel}
 
 % Layout
 %
-% \linespread{2} % DOUBLE SPACE
+ \linespread{2} % DOUBLE SPACE
 
 \usepackage[
     letterpaper,
@@ -94,27 +94,25 @@
         Copyright \copyright\ 2022 Brandon Scanlon \& Oliver Yasuna $\vert$ All rights reserved
     \end{titlepage}
 
+    \setcounter{tocdepth}{1}
     \tableofcontents
 
     \Chapter*{Abstract}{abstract}
         ABSTRACT
 
-    \Chapter*{Executive Summary}{executive_summary}
-        EXECUTIVE SUMMARY
-    
-    \Chapter*{Authorship}{authorship}
-        AUTHORSHIP
-
     \Chapter{Introduction}{introduction}
         \input{chapters/introduction.tex}
 
-    \Chapter{Literature Review}{literature_review}
+    \Chapter{Background}{literature_review}
         \input{chapters/literature_review.tex}
 
     \Chapter{Methodology}{methodology}
         \input{chapters/methodology.tex}
+        
+    \Chapter{Design}{design}
+        \input{chapters/design.tex}
 
-    \Chapter{Results}{results}
+    \Chapter{Evaluation}{results}
         \input{chapters/results.tex}
 
     \Chapter{Conclusion}{conclusion}
